@@ -1,0 +1,51 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.body-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    width: 15rem;
+}
+
+#documentNumber {
+    margin-top: 5px;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+#card-type {
+    margin-top: 5px;
+    height: 25px;
+}
+
+.label-document {
+    font-size: small;
+    font-weight: 590;
+}
+
+.label-select {
+    font-size: small;
+    font-weight: 590;
+}
+
+.send-container {
+    margin-top: 15px;
+}
+
+.submit-style:hover {
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-family: sans-serif;
+    font-size: small;
+}

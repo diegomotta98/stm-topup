@@ -1,0 +1,33 @@
+.body-container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    background-color: rgba(4, 58, 111, 1);
+    color: white;
+    // width: 100%;
+    font-size: 2rem;
+}
+
+
+.nav-bar {
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.span-title {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+.eyelash{
+    background-color: rgba(12, 86, 155, 1);
+    width: 100%;
+    height: 40px;
+}
