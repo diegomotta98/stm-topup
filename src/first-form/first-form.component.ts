@@ -13,7 +13,9 @@ export class FirstFormComponent implements OnInit {
     common: boolean = false;
     studentA: boolean = false;
     studentB: boolean = false;
-    cardTypes: string[] = ['STM', 'STM Estudiante cat. A', 'STM Estudiante cat. B']
+    cardTypes: string[] = ['STM', 'STM Estudiante cat. A', 'STM Estudiante cat. B'];
+    isCardTypeSelected: boolean = false;
+    inputTitle: string = "";
   
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -28,14 +30,17 @@ export class FirstFormComponent implements OnInit {
     console.log("you sumbitted info");
   }
 
-  openFillCardInput() {
-    if(this.formGroup.get('cardType')?.value == CardTypes.STM) {
-      this.common = true;
-    }else if(this.formGroup.get('cardType')?.value == CardTypes.STMEstudianteCatA) {
-      this.studentA = true;
-    }else{
-      this.studentB = true;
+  onSelectCardType() {
+    if (this.formGroup.get("cardType")?.value != null && this.formGroup.get("cardType")?.value.includes("Estudiante")) {
+      this.isCardTypeSelected = true;
+      this.inputTitle = "Ingrese cantidad de boletos deseados";
     }
+    if (this.formGroup.get("cardType")?.value != null && this.formGroup.get("cardType")?.value == "STM") {
+      this.isCardTypeSelected = true;
+      this.inputTitle = "Ingrese saldo deseado";
+    }
+    // this.isCardTypeSelected = true;
+    // console.log(this.isCardTypeSelected);
   }
 }
 

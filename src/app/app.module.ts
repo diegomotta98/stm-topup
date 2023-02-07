@@ -8,7 +8,10 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { FirstFormComponent } from '../first-form/first-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from '../home-page/home-page.component';
-import { NgMaterialModule } from './ng-material/ng-material.module';
+import { NgMaterialModule } from '../ng-material/ng-material.module';
+import { SubmitFormComponent } from '../submit-form/submit-form.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,16 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
     NavBarComponent,
     FirstFormComponent,
     HomePageComponent,
+    SubmitFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NgMaterialModule
+    NgMaterialModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,31 +7,26 @@
     <form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form-styles">
         <div class="body-container">
             
-            <label class="label-document">Documento de Identidad</label>
+            <label class="label-style">Documento de Identidad</label>
             <input type="text" id="documentNumber" FormControlName="documentNumber" placeholder="x.xxx.xxx-x">
             <div class="error" *ngIf="formGroup.get('documentNumber')?.hasError('required') && formGroup.get('documentNumber')?.touched">
                 El numero de documento es requerido
             </div>
             
-            <label class="label-select">Seleccione el tipo de tarjeta</label>
-            <select id="card-type" FormControlName="cardType">
-                <option selected>Seleccione una opcion</option>
-                <option *ngFor="let type of cardTypes">{{type}}</option>
+            <label class="label-style">Seleccione el tipo de tarjeta</label>
+            <select id="card-type" formControlName="cardType" (change)="onSelectCardType()">
+                <option [ngValue]="" disabled [selected]="true">Seleccione una opcion</option>
+                <option *ngFor="let type of cardTypes" >{{type}}</option>
             </select>
 
             <!-- to be changed for a component in the future -->
-            <div class="amount-container">
-                <div class="commonCard" *ngIf="common"></div>
-                <div class="studentCard" *ngIf="studentA || studentB">
-                    <input type="number" >
+                <div class="commonCard" *ngIf="isCardTypeSelected">
+                    <label class="label-style">{{ inputTitle }}</label>
+                    <input placeholder="500" type="number">
                 </div>
-            </div>
             <!-- to be changed for a component in the future -->
 
         </div>
-        <div class="send-container">
-            <button type="submit" [disabled]="formGroup.invalid" class="submit-style">Añadir saldo</button>
-        </div>
     </form>
-
+    <app-submit-form></app-submit-form>
 </div>

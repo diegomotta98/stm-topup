@@ -1,0 +1,36 @@
+.submit-style {
+    width: 500px;
+    height: 25px;
+    color: white!important;
+    background-color: rgb(12, 77, 139)!important;
+    font-family: sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.submit-style:hover {
+    width: 500px;
+    height: 27px;
+    color: white;
+    background-color: rgb(4, 34, 65)!important;
+    font-family: sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.submit-style:disabled {
+    width: 500px;
+    height: 27px;
+    border: 1px solid #999999!important;
+    color: #c0c0c0!important;
+    background-color: #ffffff!important;
+    cursor: not-allowed;
+    pointer-events: none;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+.send-container {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
