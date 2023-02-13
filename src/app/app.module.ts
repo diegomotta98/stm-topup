@@ -12,6 +12,9 @@ import { NgMaterialModule } from '../ng-material/ng-material.module';
 import { SubmitFormComponent } from '../submit-form/submit-form.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { DropdownSelectComponent } from '../dropdown-select/dropdown-select.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu'
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { MatCardModule } from '@angular/material/card';
     NavBarComponent,
     FirstFormComponent,
     HomePageComponent,
-    SubmitFormComponent
+    SubmitFormComponent,
+    DropdownSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     NgMaterialModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

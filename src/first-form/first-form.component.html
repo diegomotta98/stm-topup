@@ -1,32 +1,53 @@
-<div class="form-container">
-
-    <div class="title-container">
-        Complete con su informacion para realizar la recarga
-    </div>
-
-    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form-styles">
-        <div class="body-container">
-            
-            <label class="label-style">Documento de Identidad</label>
-            <input type="text" id="documentNumber" FormControlName="documentNumber" placeholder="x.xxx.xxx-x">
-            <div class="error" *ngIf="formGroup.get('documentNumber')?.hasError('required') && formGroup.get('documentNumber')?.touched">
-                El numero de documento es requerido
+<mat-drawer-container class="page-container">
+    <mat-drawer mode="side" opened class="sidenav-styles">
+        <!-- El opened puede cambiarse por un closed, en caso de querer hacerle un menu ocultable habria que agregar un boton para abrir y cerrar la sidenav bar -->
+        <!-- Ademas, con este mat drawer no necesitamos el componente side bar, que iba a ser el container del componente dropdow -->
+        <mat-card >
+            <h3 class="sidenav-title">Sidenav bar</h3>
+        </mat-card>
+        <div class="cards-methods">
+            <div class="cards">
+                <app-dropdown-select dropdownTitle="Mis tarjetas"></app-dropdown-select>
             </div>
-            
-            <label class="label-style">Seleccione el tipo de tarjeta</label>
-            <select id="card-type" formControlName="cardType" (change)="onSelectCardType()">
-                <option [ngValue]="" disabled [selected]="true">Seleccione una opcion</option>
-                <option *ngFor="let type of cardTypes" >{{type}}</option>
-            </select>
 
-            <!-- to be changed for a component in the future -->
-                <div class="commonCard" *ngIf="isCardTypeSelected">
-                    <label class="label-style">{{ inputTitle }}</label>
-                    <input placeholder="500" type="number">
-                </div>
-            <!-- to be changed for a component in the future -->
-
+            <div class="methods">
+                <app-dropdown-select dropdownTitle="Mis metodos de pago"></app-dropdown-select>
+            </div>
         </div>
-    </form>
-    <app-submit-form></app-submit-form>
-</div>
+    </mat-drawer>
+    
+    <div class="content-container">
+        <div class="form-container">
+
+            <div class="title-container">
+                Complete con su informacion para realizar la recarga
+            </div>
+        
+            <form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup" class="form-styles">
+                <div class="body-container">
+                    
+                    <label class="label-style">Documento de Identidad</label>
+                    <input type="text" id="documentNumber" FormControlName="documentNumber" placeholder="x.xxx.xxx-x">
+                    <div class="error" *ngIf="formGroup.get('documentNumber')?.hasError('required') && formGroup.get('documentNumber')?.touched">
+                        El numero de documento es requerido
+                    </div>
+                    
+                    <label class="label-style">Seleccione el tipo de tarjeta</label>
+                    <select id="card-type" formControlName="cardType" (change)="onSelectCardType()">
+                        <option [ngValue]="" disabled [selected]="true">Seleccione una opcion</option>
+                        <option *ngFor="let type of cardTypes" >{{type}}</option>
+                    </select>
+        
+                    <!-- to be changed for a component in the future -->
+                        <div class="commonCard" *ngIf="isCardTypeSelected">
+                            <label class="label-style">{{ inputTitle }}</label>
+                            <input placeholder="500" type="number">
+                        </div>
+                    <!-- to be changed for a component in the future -->
+        
+                </div>
+            </form>
+            <app-submit-form></app-submit-form>
+        </div>
+    </div>
+  </mat-drawer-container>

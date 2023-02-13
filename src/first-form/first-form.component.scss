@@ -5,6 +5,12 @@
     align-items: center;
     margin-top: 20px;
     font-family: sans-serif;
+    height: 100%;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
 }
 
 .body-container {
@@ -53,4 +59,10 @@
     font-size: small;
     font-weight: bolder;
     margin-top: 15px;
+}
+
+.sidenav-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submit-form',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./submit-form.component.scss']
 })
 export class SubmitFormComponent {
+
+  disableButton: boolean = false;
 
   goToAPIpay(){
     alert('You are redirecting outside this web. For your security please confirm that you accept this action');
